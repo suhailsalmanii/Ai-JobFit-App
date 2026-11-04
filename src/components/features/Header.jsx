@@ -1,33 +1,34 @@
-import React from "react";
 import {
   RiPulseLine,
   RiFileTextLine,
   RiArrowRightSLine,
   RiSuitcaseLine,
   RiSparklingLine,
-  RiFileTextFill,
 } from "@remixicon/react";
 
 const Header = () => {
   return (
-    <div className="fixed w-full top-0 z-50">
-      <div className="  flex justify-between items-center py-5 px-10 text-sm bg-white">
-        <div className="flex text-center gap-2">
-          <RiPulseLine className="text-white bg-indigo-500 rounded-md size-8" />
-          <h3 className="text-2xl font-bold">Ai JobFit</h3>
+    <header className="sticky top-0 z-50 w-full border-b border-slate-300 bg-white">
+      <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3 px-4 py-3 sm:px-6 sm:py-4 lg:px-10">
+        <div className="flex items-center gap-2">
+          <RiPulseLine className="size-8 rounded-md bg-indigo-500 text-white" />
+          <h3 className="text-xl font-bold sm:text-2xl">Ai JobFit</h3>
         </div>
-        <div className=" flex gap-3 justify-baseline text-gray-500 ">
-          <div className="flex gap-1">
+        <nav
+          aria-label="Analysis steps"
+          className="flex items-center gap-1 text-xs text-gray-500 sm:gap-3 sm:text-sm"
+        >
+          <div className="flex items-center gap-1">
             <i>
               <RiFileTextLine />
             </i>
-            <p className="">Resume</p>
+            <p>Resume</p>
           </div>
           <i>
-            <RiArrowRightSLine />
+            <RiArrowRightSLine className="size-4 sm:size-5" />
           </i>
 
-          <div className="flex gap-1">
+          <div className="flex items-center gap-1">
             <i>
               <RiSuitcaseLine />
             </i>
@@ -37,16 +38,15 @@ const Header = () => {
             <RiArrowRightSLine />
           </i>
 
-          <div className="flex gap-1 text-indigo-500">
+          <div className="flex items-center gap-1 text-indigo-500">
             <i>
               <RiSparklingLine />
             </i>
             <p>Match</p>
           </div>
-        </div>
+        </nav>
       </div>
-      <div className=" border-b-[0.5px] border-slate-300"></div>
-    </div>
+    </header>
   );
 };
 

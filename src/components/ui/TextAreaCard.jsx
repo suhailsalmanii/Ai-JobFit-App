@@ -8,18 +8,19 @@ export const TextAreaCard = ({
   placeHolder,
   colorClass,
 }) => (
-  <div className="flex gap-20">
-    <div className="border-[0.5px] w-120  hover:shadow-sm rounded-lg border-slate-300">
+  <div className="min-w-0 w-full">
+    <div className="w-full overflow-hidden rounded-lg border-[0.5px] border-slate-300 hover:shadow-sm">
       <div
-        className={`${colorClass} flex rounded-t-lg border-b-[0.5px] bg-neutral-50 border-slate-300 py-2 px-7 gap-2`}
+        className={`${colorClass} flex items-center gap-2 border-b-[0.5px] border-slate-300 bg-neutral-50 px-4 py-3 sm:px-7`}
       >
         <i>{icon}</i>
         <h4 className="text-md font-semibold tracking-wide">{tittle}</h4>
       </div>
       <div>
         <textarea
-          className=" bg-white w-full h-80 resize-none p-3 flex text-start border border-gray-300 focus:outline-none focus:border focus:border-t-indigo-400 "
+          className=" h-64 w-full resize-none border border-gray-300 bg-white p-3 text-start focus:border-indigo-400 focus:outline-none sm:h-80"
           type="text"
+          rows={10}
           placeholder={placeHolder}
           value={value}
           onChange={(e) => onChange(e.target.value)}

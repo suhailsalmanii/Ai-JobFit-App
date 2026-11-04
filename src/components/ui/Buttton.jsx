@@ -1,18 +1,16 @@
-import { React } from "react";
-
 import { RiSparkling2Line } from "@remixicon/react";
 
-const Buttton = ({ onClick }) => {
+const Buttton = ({ onClick, isLoading }) => {
   return (
-    <div className=" flex flex-col justify-center items-center">
+    <div className="flex flex-col items-center justify-center">
       <button
+        type="button"
         onClick={onClick}
-        className=" flex bg-indigo-600 active:bg-indigo-700 text-white px-5 py-2 my-3 rounded-3xl"
+        disabled={isLoading}
+        className="my-3 flex w-full max-w-sm items-center justify-center gap-2 rounded-3xl bg-indigo-600 px-5 py-3 hover:-translate-y-0.5 text-white active:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
       >
-        <i>
-          <RiSparkling2Line />
-        </i>
-        Analyze Match
+        <RiSparkling2Line />
+        {isLoading ? "Analyzing..." : "Analyze Match"}
       </button>
     </div>
   );
